@@ -12,7 +12,7 @@ MNIST data is taken from torchvision MNIST dataset, and the random number is ger
 
 
 #### Combining the inputs
-Majority of the layers in the network work on the input from MNIST dataset. These layers output 10 classes predicting the handwritten numbers. Theses classes are contactenated with one random number and fed into a fully connected layer, which outputs the 18 classes of possible sum.
+Majority of the layers in the network work on the input from MNIST dataset. These layers output 10 classes predicting the handwritten numbers. Theses classes are contactenated with a one-hot encoded random number and fed into a fully connected layer, which outputs the 18 classes of possible sum.
 
 ------------
 
