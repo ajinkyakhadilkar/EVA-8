@@ -23,7 +23,7 @@ Majority of the layers in the network work on the input from MNIST dataset. Thes
 
 ![image](https://user-images.githubusercontent.com/27129645/211918405-4963c2f6-b633-4d19-9898-60b18289202c.png)
 
-#### Testing logs
+#### Training logs
     epoch: 0 total_correct_mnist: 53706 total_correct_sum: 17776 loss: 2064.8953717714176
     epoch: 1 total_correct_mnist: 57398 total_correct_sum: 24674 loss: 1517.9885627613403
     epoch: 2 total_correct_mnist: 57648 total_correct_sum: 28366 loss: 1374.942780266516
