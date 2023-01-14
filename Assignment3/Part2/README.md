@@ -1,5 +1,5 @@
 ## Assignment-3 Part-2
-Increase the test accuracy to 99.4%
+Given the NN model, increase its test accuracy to 99.4%
 
 **Constraints**
 - [x] Parameters under 20k
