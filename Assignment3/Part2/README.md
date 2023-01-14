@@ -16,6 +16,9 @@ Increase the test accuracy to 99.4%
 ------------
 
 ### Model
+
+This solution applies squeeze-and-expand approach with BatchNorm and DropOut applied to each layer. At the end Global Average Pooling is applied and a final fully connected layer calcualtes the output classes. log_softmax along with NLL loss function is used in this model. The total number of parameters is 18.6k and the test accuracy was 99.26%.
+
     ----------------------------------------------------------------
             Layer (type)               Output Shape         Param #
     ================================================================
