@@ -116,7 +116,7 @@ class GroupNormNet(nn.Module):
 
 class LayerNormNet(nn.Module):
     def __init__(self):
-        super(GroupNormNet, self).__init__()
+        super(LayerNormNet, self).__init__()
         # CONVOLUTION BLOCK #1
         self.convblock1 = nn.Sequential( # 28x28 > 28x28 | RF 3 | jout=1
           nn.Conv2d(1, 10, 3, padding=1), 
