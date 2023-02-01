@@ -121,13 +121,13 @@ class LayerNormNet(nn.Module):
         self.convblock1 = nn.Sequential( # 28x28 > 28x28 | RF 3 | jout=1
           nn.Conv2d(1, 10, 3, padding=1), 
           nn.ReLU(),
-          nn.GroupNorm(5, 10),
+          nn.LayerNorm([10, 28, 28]),
           nn.Dropout2d(0.05)
         )   
         self.convblock2 = nn.Sequential( # 28x28 > 28x28 | RF 5 | jout=1
           nn.Conv2d(10, 16, 3, padding=1), 
           nn.ReLU(),
-          nn.GroupNorm(8, 16),
+          nn.LayerNorm([16, 28, 28]),
           nn.Dropout2d(0.05)
         )
         # TRANSITIONAL BLOCK #1        
@@ -135,7 +135,7 @@ class LayerNormNet(nn.Module):
         self.convblock3 = nn.Sequential( # 14x14 > 14x14 | RF 6 | jout=2
           nn.Conv2d(16, 8, 1),
           nn.ReLU(),
-          nn.GroupNorm(4, 8),
+          nn.LayerNorm([8, 14, 14]),
           nn.Dropout2d(0.05)
         )
 
@@ -143,20 +143,20 @@ class LayerNormNet(nn.Module):
         self.convblock4 = nn.Sequential( # 14x14 > 14x14 | RF 10 | jout=2
           nn.Conv2d(8, 16, 3, padding=1), 
           nn.ReLU(),
-          nn.GroupNorm(8, 16),
+          nn.LayerNorm([16, 14, 14]),
           nn.Dropout2d(0.05)
         )
 
         self.convblock5 = nn.Sequential( # 14x14 > 14x14 | RF 14 | jout=2
           nn.Conv2d(16, 16, 3, padding=1),
           nn.ReLU(),
-          nn.GroupNorm(8, 16),
+          nn.LayerNorm([16, 14, 14]),
           nn.Dropout2d(0.05)
         )
         self.convblock6 = nn.Sequential( # 14x14 > 14x14 | RF 18 | jout=2
           nn.Conv2d(16, 16, 3, padding=1),
           nn.ReLU(),
-          nn.GroupNorm(8, 16),
+          nn.LayerNorm([16, 14, 14]),
           nn.Dropout2d(0.05)
         )
         # TRANSITIONAL BLOCK #2    
@@ -164,20 +164,20 @@ class LayerNormNet(nn.Module):
         self.convblock7 = nn.Sequential( # 7x7 > 7x7 | RF 20 | jout=3
           nn.Conv2d(16, 8, 1),
           nn.ReLU(),
-          nn.GroupNorm(4, 8),
+          nn.LayerNorm([8, 7, 7]),
           nn.Dropout2d(0.05)
         )
         #CONVOLUTIONAL BLOCK #3
         self.convblock8 = nn.Sequential( #7x7 > 5x5 | RF 26 | jout=3
             nn.Conv2d(8, 10, 3),
             nn.ReLU(),
-            nn.GroupNorm(5, 10),
+            nn.LayerNorm([10, 5, 5]),
             nn.Dropout2d(0.05)
         )
         self.convblock9 = nn.Sequential( #5x5 > 3x3 | RF 32 | jout=3
             nn.Conv2d(10, 16, 3),
             nn.ReLU(),
-            nn.GroupNorm(8, 16),
+            nn.LayerNorm([16, 3, 3]),
             nn.Dropout2d(0.05)
         )
         self.convblock10 = nn.Sequential( #3x3 > 3x3 | RF 38 | jout=3
