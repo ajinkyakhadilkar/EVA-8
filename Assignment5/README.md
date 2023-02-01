@@ -2,7 +2,7 @@
 ## 1. Group Normalization
 
 
-####Summary
+#### Summary
 
     ----------------------------------------------------------------
           Layer (type)               Output Shape         Param #
