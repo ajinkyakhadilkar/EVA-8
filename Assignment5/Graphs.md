@@ -1,2 +1,1 @@
-
-![graphs](https://user-images.githubusercontent.com/27129645/216460521-c16b03f2-7114-4830-8f8a-b4dd66bdbf46.png)
+![download](https://user-images.githubusercontent.com/27129645/216654863-a47ed7f8-35d4-4a97-9f5d-82982bd980c9.png)
