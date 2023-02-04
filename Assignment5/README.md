@@ -1,4 +1,8 @@
-# Group, Layer and Batch Normalization
+# Group Normalization, Layer Normalization, and Batch Normalization with L1 Reguralization
+
+![graphs](https://user-images.githubusercontent.com/27129645/216755331-4b72f073-c96a-49f2-a474-b505e57595cb.jpeg)
+
+
 ## 1. Group Normalization
 
 
@@ -121,6 +125,21 @@
 
     Test set: Average loss: 0.0269, Accuracy: 9920/10000 (99.20%)
 
+#### Misclassified Images
+
+Images
+
+![download](https://user-images.githubusercontent.com/27129645/216755382-90c6ab67-0abf-4d85-bab9-032185823090.png)
+
+Correct Labels:
+
+    6 6 9 8 1 
+    9 6 5 8 8 
+
+Prediction : 
+
+    0 0 1 9 3 
+    7 5 3 0 7 
 
 
 ## 2. Layer Normalization
@@ -242,3 +261,142 @@
     Epoch=15 Loss=0.015676043927669525 batch_id=937 Accuracy=98.98%: 100%|██████████| 938/938 [00:22<00:00, 40.91it/s]
 
     Test set: Average loss: 0.0269, Accuracy: 9911/10000 (99.11%)
+
+#### Misclassified Images
+
+Images
+
+![download](https://user-images.githubusercontent.com/27129645/216755408-e489c0c3-6eaf-4b4b-b25d-c106832ec69e.png)
+
+Correct Labels: 
+
+    3 4 9 4 8 
+    3 8 6 5 3 
+
+Prediction : 
+
+    5 9 4 9 6 
+    2 3 1 0 2 
+
+
+## 3. L1 Reguralization with Batch Normalization
+
+
+#### Summary
+
+    ----------------------------------------------------------------
+            Layer (type)               Output Shape         Param #
+    ================================================================
+                Conv2d-1           [-1, 10, 28, 28]             100
+                  ReLU-2           [-1, 10, 28, 28]               0
+           BatchNorm2d-3           [-1, 10, 28, 28]              20
+             Dropout2d-4           [-1, 10, 28, 28]               0
+                Conv2d-5           [-1, 16, 28, 28]           1,456
+                  ReLU-6           [-1, 16, 28, 28]               0
+           BatchNorm2d-7           [-1, 16, 28, 28]              32
+             Dropout2d-8           [-1, 16, 28, 28]               0
+             MaxPool2d-9           [-1, 16, 14, 14]               0
+               Conv2d-10            [-1, 8, 14, 14]             136
+                 ReLU-11            [-1, 8, 14, 14]               0
+          BatchNorm2d-12            [-1, 8, 14, 14]              16
+            Dropout2d-13            [-1, 8, 14, 14]               0
+               Conv2d-14           [-1, 16, 14, 14]           1,168
+                 ReLU-15           [-1, 16, 14, 14]               0
+          BatchNorm2d-16           [-1, 16, 14, 14]              32
+            Dropout2d-17           [-1, 16, 14, 14]               0
+               Conv2d-18           [-1, 16, 14, 14]           2,320
+                 ReLU-19           [-1, 16, 14, 14]               0
+          BatchNorm2d-20           [-1, 16, 14, 14]              32
+            Dropout2d-21           [-1, 16, 14, 14]               0
+               Conv2d-22           [-1, 16, 14, 14]           2,320
+                 ReLU-23           [-1, 16, 14, 14]               0
+          BatchNorm2d-24           [-1, 16, 14, 14]              32
+            Dropout2d-25           [-1, 16, 14, 14]               0
+            MaxPool2d-26             [-1, 16, 7, 7]               0
+               Conv2d-27              [-1, 8, 7, 7]             136
+                 ReLU-28              [-1, 8, 7, 7]               0
+          BatchNorm2d-29              [-1, 8, 7, 7]              16
+            Dropout2d-30              [-1, 8, 7, 7]               0
+               Conv2d-31             [-1, 10, 5, 5]             730
+                 ReLU-32             [-1, 10, 5, 5]               0
+          BatchNorm2d-33             [-1, 10, 5, 5]              20
+            Dropout2d-34             [-1, 10, 5, 5]               0
+               Conv2d-35             [-1, 16, 3, 3]           1,456
+                 ReLU-36             [-1, 16, 3, 3]               0
+          BatchNorm2d-37             [-1, 16, 3, 3]              32
+            Dropout2d-38             [-1, 16, 3, 3]               0
+               Conv2d-39             [-1, 10, 3, 3]             170
+            AvgPool2d-40             [-1, 10, 1, 1]               0
+    ================================================================
+    Total params: 10,224
+    Trainable params: 10,224
+    Non-trainable params: 0
+    ----------------------------------------------------------------
+    Input size (MB): 0.00
+    Forward/backward pass size (MB): 1.01
+    Params size (MB): 0.04
+    Estimated Total Size (MB): 1.05
+    ----------------------------------------------------------------
+    
+
+#### Training Logs
+
+    Epoch=1 Loss=0.36217600107192993 batch_id=937 Accuracy=90.41%: 100%|██████████| 938/938 [00:26<00:00, 36.00it/s]
+    Test set: Average loss: 0.0643, Accuracy: 9793/10000 (97.93%)
+
+    Epoch=2 Loss=0.3840905427932739 batch_id=937 Accuracy=96.59%: 100%|██████████| 938/938 [00:25<00:00, 36.33it/s]
+    Test set: Average loss: 0.0604, Accuracy: 9814/10000 (98.14%)
+
+    Epoch=3 Loss=0.2833991050720215 batch_id=937 Accuracy=97.06%: 100%|██████████| 938/938 [00:25<00:00, 36.15it/s]
+    Test set: Average loss: 0.0503, Accuracy: 9849/10000 (98.49%)
+
+    Epoch=4 Loss=0.6140828132629395 batch_id=937 Accuracy=97.22%: 100%|██████████| 938/938 [00:25<00:00, 36.09it/s]
+    Test set: Average loss: 0.0439, Accuracy: 9867/10000 (98.67%)
+
+    Epoch=5 Loss=0.24126075208187103 batch_id=937 Accuracy=97.32%: 100%|██████████| 938/938 [00:25<00:00, 36.27it/s]
+    Test set: Average loss: 0.0435, Accuracy: 9867/10000 (98.67%)
+
+    Epoch=6 Loss=0.3590990900993347 batch_id=937 Accuracy=97.42%: 100%|██████████| 938/938 [00:26<00:00, 35.74it/s]
+    Test set: Average loss: 0.0452, Accuracy: 9873/10000 (98.73%)
+
+    Epoch=7 Loss=0.2772316634654999 batch_id=937 Accuracy=97.39%: 100%|██████████| 938/938 [00:26<00:00, 35.05it/s]
+    Test set: Average loss: 0.0421, Accuracy: 9863/10000 (98.63%)
+
+    Epoch=8 Loss=0.3154352605342865 batch_id=937 Accuracy=97.45%: 100%|██████████| 938/938 [00:25<00:00, 36.29it/s]
+    Test set: Average loss: 0.0386, Accuracy: 9889/10000 (98.89%)
+
+    Epoch=9 Loss=0.2768058180809021 batch_id=937 Accuracy=97.54%: 100%|██████████| 938/938 [00:25<00:00, 36.36it/s]
+    Test set: Average loss: 0.0378, Accuracy: 9885/10000 (98.85%)
+
+    Epoch=10 Loss=0.2064865678548813 batch_id=937 Accuracy=97.58%: 100%|██████████| 938/938 [00:25<00:00, 36.30it/s]
+    Test set: Average loss: 0.0371, Accuracy: 9898/10000 (98.98%)
+
+    Epoch=11 Loss=0.335493803024292 batch_id=937 Accuracy=97.61%: 100%|██████████| 938/938 [00:25<00:00, 36.62it/s]
+    Test set: Average loss: 0.0488, Accuracy: 9830/10000 (98.30%)
+
+    Epoch=12 Loss=0.19641457498073578 batch_id=937 Accuracy=97.50%: 100%|██████████| 938/938 [00:25<00:00, 36.94it/s]
+    Test set: Average loss: 0.0369, Accuracy: 9884/10000 (98.84%)
+
+    Epoch=13 Loss=0.20581068098545074 batch_id=937 Accuracy=97.62%: 100%|██████████| 938/938 [00:25<00:00, 36.45it/s]
+    Test set: Average loss: 0.0468, Accuracy: 9845/10000 (98.45%)
+
+    Epoch=14 Loss=0.22532521188259125 batch_id=937 Accuracy=97.59%: 100%|██████████| 938/938 [00:26<00:00, 36.03it/s]
+    Test set: Average loss: 0.0337, Accuracy: 9892/10000 (98.92%)
+
+    Epoch=15 Loss=0.2543012201786041 batch_id=937 Accuracy=97.74%: 100%|██████████| 938/938 [00:25<00:00, 36.43it/s]
+    Test set: Average loss: 0.0390, Accuracy: 9873/10000 (98.73%)
+
+#### Missclassified Images
+
+Images
+![download](https://user-images.githubusercontent.com/27129645/216755436-fd69f956-43ba-4826-8696-b741ed9619e6.png)
+
+Correct Labels:
+
+    4 4 7 9 9 
+    7 9 3 3 1 
+
+Prediction : 
+
+    9 7 2 7 4 
+    2 7 5 7 7 
