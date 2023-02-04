@@ -1,4 +1,4 @@
-# Group Normalization, Layer Normalization, and Batch Normalization with L1 Reguralization
+# Group Normalization, Layer Normalization, and Batch Normalization with L1 Reguralization : A Comparison
 
 ![graphs](https://user-images.githubusercontent.com/27129645/216755331-4b72f073-c96a-49f2-a474-b505e57595cb.jpeg)
 
