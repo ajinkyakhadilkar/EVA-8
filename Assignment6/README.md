@@ -1,4 +1,4 @@
-## CIFAR10 with Albumebtations
+## CIFAR10 with Albumentations
 
 ![download](https://user-images.githubusercontent.com/27129645/217647205-ed8ce160-be9f-4002-9499-678d219f1c2e.png)
 
