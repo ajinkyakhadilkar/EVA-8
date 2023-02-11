@@ -24,7 +24,7 @@ class Net(nn.Module):
         # Convolutional Block #3
         # Depthwise Separable Convolution
         self.convblock3 = nn.Sequential( # 15x15 > 15x15 | jin=2 | RF = 15
-          nn.Conv2d(16, 16, 3, groups=1, padding=1),
+          nn.Conv2d(16, 16, 3, groups=16, padding=1),
           nn.Conv2d(16, 8, 1),
           nn.ReLU()
         )
