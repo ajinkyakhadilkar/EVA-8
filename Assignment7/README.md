@@ -159,10 +159,10 @@ I trained the network for 20 epochs.
 
 The misclassified images can be found in [Misclassified.md](https://github.com/ajinkyakhadilkar/EVA-8/blob/main/Assignment7/Misclassified.md).
 
-*Note: Normalized images are shown in the plots*
+*Note: Some transformed images are shown in the plots*
 
 ### GradCam of Misclassified Images
 
 The GradCam plots of the misclassified images can be found in [GradCam.md](https://github.com/ajinkyakhadilkar/EVA-8/blob/main/Assignment7/GradCam.md).
 
-*ToDo: The GradCam plots are messed up, again possibily due to poor handling of normalization*
+*ToDo: The GradCam plots are messed up, possibily due to poor handling of normalization*
