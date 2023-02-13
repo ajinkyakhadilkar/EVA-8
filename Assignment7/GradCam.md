@@ -5,4 +5,5 @@
 
 ### Screenshot for better reading
 
-![image](https://user-images.githubusercontent.com/27129645/218547882-1dfaadc4-9e2a-4482-a598-f52019155214.png)
+![image](https://user-images.githubusercontent.com/27129645/218551741-0834031c-7045-4574-82f6-edb67907bc21.png)
+
