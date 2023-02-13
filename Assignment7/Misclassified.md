@@ -1,8 +1,10 @@
 ## Misclassified Images
 
-![image](https://user-images.githubusercontent.com/27129645/218547344-6d31b8dc-07b7-417e-b8c1-2bd5fe7fb98c.png)
+![image](https://user-images.githubusercontent.com/27129645/218566686-af54dfe8-5fb5-4df7-afe0-db5147b81910.png)
 
 
-### Screenshot for better reading
 
-![image](https://user-images.githubusercontent.com/27129645/218547733-62f1d387-57c9-403f-8152-675e1765a37b.png)
+### Screenshot for better visibility
+
+![image](https://user-images.githubusercontent.com/27129645/218566767-075ef273-2b7e-441d-a29c-6af574f9e9d0.png)
+
