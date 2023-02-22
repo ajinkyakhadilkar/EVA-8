@@ -1,5 +1,7 @@
 # OneCycleLR on Resnet18 with CIFAR10
 
+Link to pytorch-cifar-for-EVA library: https://github.com/ajinkyakhadilkar/pytorch-cifar-for-EVA
+
 ### Resnet Model
 
      ----------------------------------------------------------------
@@ -52,14 +54,15 @@
  
 To introduce reguralization and prevent overfitting of the model, the following transformations are applied to the training dataset.
 
-     main.prepare_trainloader([
-       A.RandomCrop(32, 32),
-       A.HorizontalFlip(p=0.5),
-       A.Cutout(),
-       A.Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.2023, 0.1994, 0.2010)),
-       A.pytorch.transforms.ToTensorV2()
-     ])
- 
+```python
+main.prepare_trainloader([
+  A.RandomCrop(32, 32),
+  A.HorizontalFlip(p=0.5),
+  A.Cutout(),
+  A.Normalize(mean=(0.4914, 0.4822, 0.4465), std=(0.2023, 0.1994, 0.2010)),
+  A.pytorch.transforms.ToTensorV2()
+])
+``` 
  
  ### Finding the Maximum LR
  To perform OneCycleLR, we need to first find out the maximum LR value for the cycle. We do this using a Range Test. The model is trained for 1 epoch with the Learning Rate increasing exponentially with each batch. The values of LRs and their corresponding losses are noted and plotted in a graph.
