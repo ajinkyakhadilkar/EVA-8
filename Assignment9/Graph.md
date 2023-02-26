@@ -1,2 +1,3 @@
-![train_test_loss](https://user-images.githubusercontent.com/27129645/221428473-d852a896-1b2c-47aa-9413-7fd2fb1b333f.jpg)
+![train_test_loss](https://user-images.githubusercontent.com/27129645/221428709-cba8c4ed-a1df-4cdd-a89a-7bb792a2e3a4.jpg)
+
 Training and Validation Loss Graph
