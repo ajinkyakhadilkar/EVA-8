@@ -1,0 +1,4 @@
+classes=4
+train=D:\Learning\EVA_8\Assignment12\YoloV3-master\data\customdata\custom.txt
+valid=D:\Learning\EVA_8\Assignment12\YoloV3-master\data\customdata\custom.txt 
+names=D:\Learning\EVA_8\Assignment12\YoloV3-master\data\customdata\custom.names
