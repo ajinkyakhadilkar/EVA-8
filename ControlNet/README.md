@@ -342,3 +342,9 @@ Sample training logs for 1 epoch.
 </details>
 
 The checkpoint is after 5 epochs of training on NVidia A100 GPU.
+
+## Result
+Sample screenshot
+
+
+![Screenshot 2023-05-27 191048](https://github.com/ajinkyakhadilkar/EVA-8/assets/27129645/dbfc8f64-259a-4aa5-bc8a-6a09834b8028)
