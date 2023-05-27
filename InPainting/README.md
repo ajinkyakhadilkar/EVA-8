@@ -1,6 +1,6 @@
 # InPainting implementation for Stable Diffusion
 
-This repository showcases an advanced implementation of an in-painting mechanism designed specifically for the stable diffusion model. The implementation takes three inputs: an image, a mask, and a prompt. The mask in the image is then effectively replaced with a generation that is intelligently generated based on the provided prompt. Official repository: [Stability-AI/stablediffusion](https://github.com/Stability-AI/stablediffusion)
+This repository showcases an advanced implementation of an in-painting mechanism designed specifically for the stable diffusion model. The implementation takes three inputs: an image, a mask, and a prompt. The mask in the image is then effectively replaced with a generation that is intelligently generated based on the provided prompt. It uses pre-trained weights of Stable Diffusion 2. Official repository: [Stability-AI/stablediffusion](https://github.com/Stability-AI/stablediffusion)
 
 ## Usage
 
@@ -31,4 +31,12 @@ Download Stable Diffusion 2 InPainting checkpoint [512-inpainting-ema.ckpt](http
 ```
 python scripts/inpainting.py --ckpt 512-inpainting-ema.ckpt --config configs/stable-diffusion/v2-inpainting-inference.yaml --device cuda
 ```
+
+The script only accepts images of size 512x512.
+
+
+## Result
+Sample screenshot. You can find more screenshots [here](https://github.com/ajinkyakhadilkar/EVA-8/tree/main/InPainting/screenshots).
+
+![Screenshot 2023-05-27 195923](https://github.com/ajinkyakhadilkar/EVA-8/assets/27129645/34f6b2e7-1f79-42ce-991f-928d77bf220b)
 
