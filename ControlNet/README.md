@@ -340,3 +340,5 @@ Sample training logs for 1 epoch.
     DDIM Sampler: 100% 50/50 [00:22<00:00,  2.24it/s]
 
 </details>
+
+The checkpoint is after 5 epochs of training on NVidia A100 GPU.
