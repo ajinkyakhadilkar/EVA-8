@@ -15,3 +15,11 @@ Install (and uninstall) the dependencies using pip.
 !pip uninstall -y keras
 ```
 
+### Run the script
+```
+python gradio_canny2image.py
+```
+
+## Training
+This model was trained on randomly picked 200 classes from [ImageNet-1k](https://huggingface.co/datasets/imagenet-1k) validation dataset. 
+
