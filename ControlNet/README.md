@@ -15,7 +15,7 @@ Install (and uninstall) the dependencies using pip.
 !pip uninstall -y keras
 ```
 
-Download the trained checkpoint [here](https://drive.google.com/file/d/10lH_Yl0OLqEu1-98LzX1_2QyjuZvSk7o/view?usp=sharing)
+Download the trained checkpoint [here](https://drive.google.com/file/d/10lH_Yl0OLqEu1-98LzX1_2QyjuZvSk7o/view?usp=sharing).
 
 ### Run the script
 ```
@@ -23,5 +23,43 @@ python gradio_canny2image.py
 ```
 
 ## Training
+
+### Dataset
 This model was trained on randomly picked 200 classes from [ImageNet-1k](https://huggingface.co/datasets/imagenet-1k) validation dataset. 
 
+This model is trained on these [200 classes](https://github.com/ajinkyakhadilkar/EVA-8/files/11581466/classes.txt).
+
+The images are resized to 512x512 for the training script.
+```
+python resize_images.py
+```
+
+Generate Canny edge maps for the images.
+```
+python edge_detection.py
+```
+Here is how the images are transformed after running the script.
+
+
+![ILSVRC2012_val_00000075_n01795545](https://github.com/ajinkyakhadilkar/EVA-8/assets/27129645/73077755-1c80-4087-92bf-a35501b5f595)
+![ILSVRC2012_val_00000075_n01795545](https://github.com/ajinkyakhadilkar/EVA-8/assets/27129645/6ce5db42-0007-4846-839e-2cfa367fe476)
+
+
+The source and target images are ready. Next step is to generate prompts for these images. I used [BLIP](https://github.com/salesforce/BLIP) generated captions as prompts.
+```
+python blip_captions.py
+```
+This will generate BLIP captions in JSON format. We will need to re-formate the JSON to get the prompts in a desired format for the trainer.
+```
+python transform_prompts.py
+```
+
+Here is a sample from the file generated from above scripts.
+```json
+{"source": "ILSVRC2012_val_00000075_n01795545.JPEG", "target": "ILSVRC2012_val_00000075_n01795545.JPEG", "prompt": "there is a black bird with a red head and white wings"}
+{"source": "ILSVRC2012_val_00000077_n02087394.JPEG", "target": "ILSVRC2012_val_00000077_n02087394.JPEG", "prompt": "there is a dog that is standing on a rock in the woods"}
+{"source": "ILSVRC2012_val_00000079_n02091635.JPEG", "target": "ILSVRC2012_val_00000079_n02091635.JPEG", "prompt": "there is a dog that is sitting on a chair with its tongue out"}
+
+```
+
+The dataset is now ready for training. We will pass the source images, target images and image prompts to the trainer.
