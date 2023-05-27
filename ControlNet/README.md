@@ -15,6 +15,8 @@ Install (and uninstall) the dependencies using pip.
 !pip uninstall -y keras
 ```
 
+Download the trained checkpoint [here](https://drive.google.com/file/d/10lH_Yl0OLqEu1-98LzX1_2QyjuZvSk7o/view?usp=sharing)
+
 ### Run the script
 ```
 python gradio_canny2image.py
