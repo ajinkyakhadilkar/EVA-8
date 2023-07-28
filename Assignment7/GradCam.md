@@ -1,9 +1,6 @@
 ## GradCams of Misclassified Images
 
-![image](https://user-images.githubusercontent.com/27129645/218547465-880cc3c0-4094-4507-a062-42303bd515c6.png)
+![image](https://github.com/ajinkyakhadilkar/EVA-8/assets/27129645/54c00ae5-b0bc-45ac-9068-19398723dd10)
 
 
-### Screenshot for better reading
-
-![image](https://user-images.githubusercontent.com/27129645/218551741-0834031c-7045-4574-82f6-edb67907bc21.png)
 
