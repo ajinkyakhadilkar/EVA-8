@@ -164,5 +164,3 @@ The misclassified images can be found in [Misclassified.md](https://github.com/a
 ### GradCam of Misclassified Images
 
 The GradCam plots of the misclassified images can be found in [GradCam.md](https://github.com/ajinkyakhadilkar/EVA-8/blob/main/Assignment7/GradCam.md).
-
-*ToDo: The GradCam plots are messed up, possibily due to poor handling of normalization*
